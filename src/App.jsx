@@ -136,7 +136,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
               title="E-Commerce Backend"
-              description="Ongoing development focused on improving user experience and scalability."
+              description="A full-featured Spring Boot-based REST API for managing e-commerce operations. Includes user authentication with JWT, product and order management, PayPal payment integration, email verification, and Docker deployment for scalability."
               tech={["Java", "MySQL", "JPA", "Docker"]}
               githubLink="https://github.com/MohannadFathy0/Spring-boot-E-Commerce"
             />
@@ -147,8 +147,20 @@ function App() {
               githubLink="https://github.com/MohannadFathy0/web-socket-app"
             />
             <ProjectCard
-              title="API Gateway"
-              description="Developed an API Gateway to route requests to appropriate microservices, ensuring secure and efficient communication across services."
+              title="Quiz-Generator API"
+              description="A Spring Boot microservice that dynamically generates quizzes by fetching and organizing questions from a database. Designed for educational platforms, it supports customizable quiz formats and seamless integration with other services like user management and scoring."
+              tech={[
+                "Java",
+                "Microservices",
+                "API Gateway",
+                "Eureka",
+                "Postgres",
+              ]}
+              githubLink="https://github.com/MohannadFathy0/quiz-app"
+            />
+            <ProjectCard
+              title="Currency-Exchange API"
+              description="A microservice-based REST API that provides real-time currency exchange rates. Built with Spring Boot, it supports dynamic conversion between different currencies and can be integrated into broader financial applications or e-commerce platforms."
               tech={["Java", "Microservices", "Spring Cloud", "eureka"]}
               githubLink="https://github.com/MohannadFathy0/spring-boot-microservices"
             />
