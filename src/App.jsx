@@ -106,7 +106,7 @@ function App() {
             <SkillCard
               icon={<Server className="w-8 h-8" />}
               title="Backend Development"
-              skills={["Java", "Spring Boot", "Python", "Django"]}
+              skills={["Java", "Spring Boot", "Django", "React"]}
             />
             <SkillCard
               icon={<Database className="w-8 h-8" />}
