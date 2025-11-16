@@ -120,22 +120,22 @@ function App() {
             <SkillCard
               icon={<Code2 className="w-8 h-8" />}
               title="Frontend Development"
-              skills={["React", "Vue.js", "HTML/CSS", "JavaScript"]}
+              skills={["React", "Vue.js", "HTML/CSS", "JavaScript", "TypeScript"]}
             />
             <SkillCard
               icon={<Database className="w-8 h-8" />}
               title="UI/UX Design"
-              skills={["Tailwind CSS", "Responsive Design", "Figma", "Material UI"]}
+              skills={["Tailwind CSS", "Responsive Design", "Figma", "Material UI", "CSS Grid/Flexbox"]}
             />
             <SkillCard
               icon={<Server className="w-8 h-8" />}
-              title="Web Technologies"
-              skills={["TypeScript", "REST APIs", "WebSockets", "Redux"]}
+              title="Backend Development"
+              skills={["Java", "Spring Boot", "Django", "Node.js", "REST APIs"]}
             />
             <SkillCard
               icon={<Terminal className="w-8 h-8" />}
-              title="Development Tools"
-              skills={["Git", "Webpack", "NPM/Yarn", "Testing Libraries"]}
+              title="Databases & Tools"
+              skills={["PostgreSQL", "MongoDB", "Git", "NPM/Yarn", "Docker"]}
             />
           </div>
         </div>
