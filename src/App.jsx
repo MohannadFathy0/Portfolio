@@ -151,19 +151,19 @@ function App() {
             <WebsiteCard
               title="Krok Plus"
               description="A comprehensive medical education platform featuring thousands of questions and exams specifically designed for medical students. Prepare for licensing exams and assessments with high-quality, exam-aligned practice materials."
-              imageUrl="/public/krok.png"
+              imageUrl="/krok.png"
               websiteLink="https://krokplus.com/en"
             />
             <WebsiteCard
               title="علم - AI Tools"
               description="An AI-powered platform specialized in searching and analyzing Arabic manuscripts. Advanced artificial intelligence tools help researchers and scholars efficiently explore and retrieve information from Arabic historical and academic documents."
-              imageUrl="/public/ALM.png"
+              imageUrl="/ALM.png"
               websiteLink="https://3-lm-ai-tools.vercel.app/#"
             />
             <WebsiteCard
               title="إتقان - Courses"
               description="A comprehensive Islamic education platform offering specialized courses in religious studies and Islamic sciences. Access high-quality educational content designed to deepen knowledge and understanding of religious topics."
-              imageUrl="/public/itqan.png"
+              imageUrl="/itqan.png"
               websiteLink="https://xn--kgbei0hva.com/"
             />
           </div>
