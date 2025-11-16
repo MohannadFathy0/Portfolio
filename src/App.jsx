@@ -7,6 +7,7 @@ import {
   Database,
   Code2,
   Terminal,
+  ExternalLink,
 } from "lucide-react";
 
 function SkillCard({ icon, title, skills }) {
@@ -23,31 +24,44 @@ function SkillCard({ icon, title, skills }) {
   );
 }
 
-function ProjectCard({ title, description, tech, githubLink }) {
+function WebsiteCard({ title, description, imageUrl, websiteLink, githubLink }) {
   return (
-    <div className="bg-slate-700 p-6 rounded-xl shadow-lg flex flex-col justify-between">
-      <div>
+    <div className="bg-slate-700 rounded-xl shadow-lg overflow-hidden flex flex-col">
+      <div className="relative h-48 overflow-hidden bg-slate-600">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-slate-300 mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tech.map((t, i) => (
-            <span
-              key={i}
-              className="bg-slate-600 text-sm px-2 py-1 rounded-md text-white"
+        <p className="text-slate-300 mb-4 flex-grow">{description}</p>
+        <div className="flex gap-3">
+          {websiteLink && (
+            <a
+              href={websiteLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
             >
-              {t}
-            </span>
-          ))}
+              <ExternalLink className="w-4 h-4" />
+              Visit Website
+            </a>
+          )}
+          {githubLink && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              GitHub
+            </a>
+          )}
         </div>
       </div>
-      <a
-        href={githubLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-400 hover:underline mt-auto"
-      >
-        View on GitHub
-      </a>
     </div>
   );
 }
@@ -63,10 +77,10 @@ function App() {
               Hi, I'm Mohannad Fathy
             </h2>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-              Backend Developer
+              Software Developer
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 mb-8">
-              Building robust, scalable server-side solutions
+              Creating beautiful, responsive, and user-friendly web applications
             </p>
             <div className="flex justify-center gap-4">
               <a
@@ -104,24 +118,24 @@ function App() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <SkillCard
-              icon={<Server className="w-8 h-8" />}
-              title="Backend Development"
-              skills={["Java", "Spring Boot", "Django", "React"]}
+              icon={<Code2 className="w-8 h-8" />}
+              title="Frontend Development"
+              skills={["React", "Vue.js", "HTML/CSS", "JavaScript"]}
             />
             <SkillCard
               icon={<Database className="w-8 h-8" />}
-              title="Databases"
-              skills={["PostgreSQL", "MongoDB", "Redis", "MySQL"]}
+              title="UI/UX Design"
+              skills={["Tailwind CSS", "Responsive Design", "Figma", "Material UI"]}
             />
             <SkillCard
-              icon={<Code2 className="w-8 h-8" />}
-              title="API Development"
-              skills={["REST", "GraphQL", "WebSockets", "gRPC"]}
+              icon={<Server className="w-8 h-8" />}
+              title="Web Technologies"
+              skills={["TypeScript", "REST APIs", "WebSockets", "Redux"]}
             />
             <SkillCard
               icon={<Terminal className="w-8 h-8" />}
-              title="DevOps"
-              skills={["Docker", "Kubernetes", "CI/CD", "AWS"]}
+              title="Development Tools"
+              skills={["Git", "Webpack", "NPM/Yarn", "Testing Libraries"]}
             />
           </div>
         </div>
@@ -134,35 +148,23 @@ function App() {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ProjectCard
-              title="E-Commerce Backend"
-              description="A full-featured Spring Boot-based REST API for managing e-commerce operations. Includes user authentication with JWT, product and order management, PayPal payment integration, email verification, and Docker deployment for scalability."
-              tech={["Java", "MySQL", "JPA", "Docker"]}
-              githubLink="https://github.com/MohannadFathy0/Spring-boot-E-Commerce"
+            <WebsiteCard
+              title="Krok Plus"
+              description="A comprehensive medical education platform featuring thousands of questions and exams specifically designed for medical students. Prepare for licensing exams and assessments with high-quality, exam-aligned practice materials."
+              imageUrl="/public/krok.png"
+              websiteLink="https://krokplus.com/en"
             />
-            <ProjectCard
-              title="Real-time Chat app"
-              description="Built a scalable real-time chat application with user authentication and message persistence, ensuring fast and secure messaging."
-              tech={["Java", "MySQL", "JavaScript", "WebSockets"]}
-              githubLink="https://github.com/MohannadFathy0/web-socket-app"
+            <WebsiteCard
+              title="علم - AI Tools"
+              description="An AI-powered platform specialized in searching and analyzing Arabic manuscripts. Advanced artificial intelligence tools help researchers and scholars efficiently explore and retrieve information from Arabic historical and academic documents."
+              imageUrl="/public/ALM.png"
+              websiteLink="https://3-lm-ai-tools.vercel.app/#"
             />
-            <ProjectCard
-              title="Quiz-Generator API"
-              description="A Spring Boot microservice that dynamically generates quizzes by fetching and organizing questions from a database. Designed for educational platforms, it supports customizable quiz formats and seamless integration with other services like user management and scoring."
-              tech={[
-                "Java",
-                "Microservices",
-                "API Gateway",
-                "Eureka",
-                "Postgres",
-              ]}
-              githubLink="https://github.com/MohannadFathy0/quiz-app"
-            />
-            <ProjectCard
-              title="Currency-Exchange API"
-              description="A microservice-based REST API that provides real-time currency exchange rates. Built with Spring Boot, it supports dynamic conversion between different currencies and can be integrated into broader financial applications or e-commerce platforms."
-              tech={["Java", "Microservices", "Spring Cloud", "eureka"]}
-              githubLink="https://github.com/MohannadFathy0/spring-boot-microservices"
+            <WebsiteCard
+              title="إتقان - Courses"
+              description="A comprehensive Islamic education platform offering specialized courses in religious studies and Islamic sciences. Access high-quality educational content designed to deepen knowledge and understanding of religious topics."
+              imageUrl="/public/itqan.png"
+              websiteLink="https://xn--kgbei0hva.com/"
             />
           </div>
         </div>
@@ -190,7 +192,7 @@ function App() {
 
       {/* Footer */}
       <footer className="py-8 text-center text-slate-400">
-        <p>© 2025 Backend Developer. All rights reserved.</p>
+        <p>© 2025 Software Developer. All rights reserved.</p>
       </footer>
     </div>
   );
